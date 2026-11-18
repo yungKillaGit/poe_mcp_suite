@@ -1,15 +1,15 @@
 [submodule "pob-mcp"]
 	path = pob-mcp
-	url = https://github.com/charleslucas/pob-mcp.git
+	url = https://github.com/yungKillaGit/pob-mcp.git
 [submodule "poe-mcp-server"]
 	path = poe-trade-mcp
 	url = https://github.com/yungKillaGit/poe-trade-mcp.git
 [submodule "POEMCP"]
 	path = poe-data-mcp
-	url = https://github.com/charleslucas/poe-data-mcp.git
+	url = https://github.com/yungKillaGit/poe-data-mcp.git
 [submodule "PathOfBuilding"]
 	path = PathOfBuilding
-	url = https://github.com/charleslucas/PathOfBuilding.git
+	url = https://github.com/yungKillaGit/PathOfBuilding.git
 	branch = api-stdio
 [submodule "reference_data/skilltree"]
 	path = reference_data/skilltree
