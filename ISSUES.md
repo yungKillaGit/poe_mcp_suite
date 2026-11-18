@@ -43,6 +43,12 @@ Reported `47 jewel socket(s) empty` when the user had every *reachable* allocate
 **Repro (2026-05-29):** `get_build_issues` on MirageSixFingeredMan listed 47 jewel IDs as empty (Jewel 2311, Jewel 3109, …) — the actual allocated jewel sockets all had jewels.
 **Affects:** pob-mcp `get_build_issues`.
 
+### 4 test suites fail on a non-English locale (number formatting)
+
+`npx jest` in `pob-mcp` fails 4 suites / 6 tests on this ru-RU Windows machine: expected `42,000`, got `42 000` (and the same space-grouping elsewhere). The formatters use `toLocaleString`, so the assertion is locale-dependent, not code-dependent. Establish the baseline **before** blaming your change: `git stash push -- src && npx jest <suites> && git stash pop`.
+
+**Affects:** `tests/unit/minionDpsBreakdownHandler.test.ts`, `tests/unit/statWeightsHandler.test.ts`, `tests/unit/ailmentHandler.test.ts`, `tests/unit/connectNodesHandler.test.ts`.
+
 ### Baseline instability across `remove_gem` + `add_gem` + reload
 
 Between two sims in the same socket group, Speed jumped 1.49 → 1.70 attacks/sec with no apparent cause, and the new value persisted through `restore_snapshot` + `lua_reload_build`. Some PoB config flag or buff state appears to toggle on gem operations and not reset cleanly on reload. Makes A/B sims non-apples-to-apples without identifying which flag flips.
@@ -108,6 +114,21 @@ Two traps seen on the same day, both of which look identical from the tool outpu
 
 - **Mojibake account name.** `POE_ACCOUNT_NAME` saved as double-encoded bytes (`\xd0\xa0\xe2\x80\x99…` instead of `Вкусно_покушол#6141`) makes every stash call `403` even with a valid cookie. Any non-ASCII name must be written as proper UTF-8; `_header_safe()` percent-encodes it for the User-Agent.
 - **Editing the wrong config.** OpenCode spawns these servers from `~/.config/opencode/opencode.json`; the repo's `.mcp.json` is ignored by it (kept for other agents / docs, and gitignored). Fixing `POE_SESSION_ID` only in `.mcp.json` changes nothing — the running server keeps the stale value from `opencode.json`.
+
+---
+
+## Resolved — PoB loadouts / mixed set state (2026-11-18)
+
+### Loadouts are derived, not stored — switching one set family corrupts the numbers
+
+PoB has **no loadout object**. The dropdown is computed by `buildMode:SyncLoadouts()` (`Modules/Build.lua`): a loadout is the tree spec + item set + skill set + config set that share the **same title**, with a family containing a single set acting as a wildcard, and `{id1,id2}` link identifiers in titles matching by shared id. Consequently `select_spec` + `select_item_set` chosen by hand produced a real, plausible-looking stat block from **mixed** sets (tree from the guide, skills/config from the live character) — this is what made the same build read Chaos −52 with 75/75/75 elemental resists, and sent an earlier session hunting a gear problem that did not exist.
+
+Fixed by adding loadout-level tooling rather than by documenting a workaround: `list_loadouts` / `select_loadout` (plus the previously GUI-only `list_skill_sets` / `select_skill_set`, `list_config_sets` / `select_config_set`). `select_loadout` switches every family that matches, reports each match in the result and flags `complete = false` instead of quietly leaving a mixed state.
+
+Jewels are part of this trap too: they live in the tree spec (`<Tree><Spec><Sockets>`), so a spec is not "just nodes" — a spec without sockets silently drops every jewel (Unnatural Instinct, Light of Meaning, ...).
+
+**Verified:** `storm burst repulsion.xml` → `Default` (all sets #1) Life 3717 / 75-75-75-75 / FullDPS 40.5M; `ME` (all #2) Life 1700 / FullDPS 0. Unknown name → `loadout not found: X (available: Default, ME)`.
+**Affects:** any stat measurement through pob-mcp; `build-optimization-sim`, `dps-analysis`, `gear-shopping`, `tree-analysis` workflows.
 
 ---
 
