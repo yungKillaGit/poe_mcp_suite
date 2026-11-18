@@ -125,12 +125,15 @@ Comprehensive coverage of how socketed jewels affect the tree. All new this iter
 | `search_cluster_jewels` | pob |
 | `analyze_build_cluster_jewels` | pob |
 
-## 👁 Specs & Item Sets
+## 👁 Specs, Item Sets & Loadouts
 
 | Tool | Server |
 |------|--------|
 | `list_specs` / `select_spec` / `create_spec` / `delete_spec` / `rename_spec` | pob |
 | `list_item_sets` / `select_item_set` / `create_item_set` | pob |
+| `list_skill_sets` / `select_skill_set` | pob |
+| `list_config_sets` / `select_config_set` | pob |
+| `list_loadouts` / `select_loadout` | pob |
 
 ## ⚔️ Gems & Skill Links
 
