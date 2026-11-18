@@ -1,6 +1,6 @@
 ---
 name: stash-scanning
-description: Stash tab scanning and item pricing. NOTE - bulk stash tools currently blocked (GGG disabled the legacy endpoint); score_rare works for individual items.
+description: Stash tab scanning and item pricing. Legacy stash endpoint works as of 2026-11-18 (verified: 32 tabs, 60 items) — undocumented endpoint, can change without notice; score_rare works for individual items.
 when_to_use: Use for scanning or pricing stash contents — "what's in my stash worth selling", "price my dump tab", "is this item worth listing", "what should I vendor". Immediately tell the user bulk scanning is blocked (options - score_rare per item, OAuth registration, or wait); do not call list_tabs/get_tab — they 403.
 ---
 

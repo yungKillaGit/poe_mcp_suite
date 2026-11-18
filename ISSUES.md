@@ -76,24 +76,18 @@ See `INSTALL.md` → "Step 6 (optional)" for the full intended setup guide.
 
 ---
 
-## Open — stash API access
+## Resolved — stash API access
 
-### Stash scanning blocked: GGG disabled legacy character-window stash endpoint
+### Legacy stash endpoint responds again (verified 2026-11-18)
 
-`list_tabs`, `get_tab`, and `scan_stash_tabs` use `poe_lib.py`'s two-path design:
-1. **OAuth** (if `client_id` + tokens): hits `api.pathofexile.com/stash/{league}` — requires developer app registration
-2. **POESESSID fallback**: hits `character-window/get-stash-items` — returns **HTTP 403 Forbidden (code 6)**
+The POESESSID fallback (`character-window/get-stash-items`) returned **200** on 2026-11-18 with a valid session cookie:
 
-GGG has shut down the legacy `character-window/get-stash-items` endpoint for stash access while keeping `character-window/get-items` (character equipment) alive. The fallback code is correct but the endpoint it targets is no longer accepting requests.
+- `list_tabs` → **32 tabs**
+- `get_tab(0)` → **60 items**
 
-**The only working path** is OAuth registration at `pathofexile.com/developer`, which is designed for public-facing applications and is onerous for a personal tool (full review process, requires justification for each scope).
+The previous state (2026-06-04) was `HTTP 403: {"error":{"code":6,"message":"Forbidden"}}` with the same kind of valid POESESSID. Either GGG re-enabled the endpoint or the earlier failure was transient/environmental — the diagnostic value of the original report is preserved below.
 
-**Impact:** `price_tab` and `scan_stash_tabs` are blocked — these are cache-read-only tools (no GGG calls during pricing) but can't populate their cache without a working `get_tab`. The stash scanning workflow cannot be used or playbookeduntil this is resolved.
-
-**Possible directions:**
-- Accept the limitation: stash scanning requires developer OAuth registration
-- Investigate if GGG's public stash stream (`/api/public-stash-tabs`) offers an alternative path (public listings only, not your own stash)
-- Document the stash scanning workflow anyway (what it would do) so it's ready when OAuth is eventually set up
+**Caveat — this does not make it sanctioned.** `character-window/*` is absent from the API Reference, and the developer docs state that reverse-engineering endpoints outside the documentation is against Terms of Use section 7i (see `legal_considerations.md`). It can be withdrawn again without notice, so no workflow should assume it is permanent. The documented route is OAuth (`api.pathofexile.com/stash/{league}`), which `poe_lib.py` prefers automatically once tokens exist.
 
 **Repro (2026-06-04):** `list_tabs` → `HTTP 403: {"error":{"code":6,"message":"Forbidden"}}` despite valid POESESSID in env. Character endpoints (`get-items`) work fine with the same POESESSID.
 
