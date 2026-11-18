@@ -3,7 +3,7 @@
 	url = https://github.com/charleslucas/pob-mcp.git
 [submodule "poe-mcp-server"]
 	path = poe-trade-mcp
-	url = https://github.com/charleslucas/poe-trade-mcp.git
+	url = https://github.com/yungKillaGit/poe-trade-mcp.git
 [submodule "POEMCP"]
 	path = poe-data-mcp
 	url = https://github.com/charleslucas/poe-data-mcp.git

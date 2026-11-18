@@ -50,7 +50,7 @@ For a **personal tool** used by one person in their own sessions, formal OAuth r
 
 | Requirement | Status |
 |---|---|
-| User-Agent: `OAuth {clientId}/{version} (contact: {contact})` | ✅ `poe_trade.py`: `"OAuth BoschAIMaster/1.0 (contact: buildtool@localhost)"` |
+| User-Agent: identifiable client + real contact | ✅ `poe_trade.py` builds `poe-trade-mcp/{version} (account: …; contact: …)` **per request** from `POE_ACCOUNT_NAME` / `POE_CONTACT_EMAIL`; `poe_lib.py` does the same for character-window calls. Both warn on stderr when the contact is missing — the old hardcoded `contact: buildtool@localhost` was a placeholder and did not satisfy the requirement. |
 | Parse `X-Rate-Limit-*` response headers and comply | ✅ pob-mcp uses Bottleneck; poe-trade-mcp now uses header-driven `_observed_min_interval` |
 | Non-affiliation notice in a visible location | ✅ Added to all four READMEs (2026-05-31) and to trade tool outputs |
 | Reasonable attempts to avoid 4xx errors | ✅ Retry logic + rate limiting in both servers |
@@ -82,9 +82,10 @@ GGG allows **ExileExchange** (Ctrl+D in PoB — opens the trade site in a browse
 ### Risk and posture
 
 - Claude warns the user and requires explicit confirmation before calling any trade API tool (see `CLAUDE.md`). Warning is once per session.
-- All GGG API calls send the required User-Agent header.
-- Rate limiting: pob-mcp uses Bottleneck (≤4/sec, 300s cache); poe-trade-mcp uses header-driven adaptive interval (floor 1.5s) + `Retry-After` on 429.
+- All GGG API calls send a User-Agent carrying the PoE account name and a real contact address. **This repository is public**, so `.githooks/pre-commit` refuses to commit credential files or any content containing a live-looking `POESESSID` (placeholders pass). Enable with `git config core.hooksPath .githooks`.
+- Rate limiting: pob-mcp uses Bottleneck (≤4/sec, 300s cache); poe-trade-mcp uses header-driven adaptive interval (floor 1.5s) + `Retry-After` on 429. `POE_MIN_REQUEST_INTERVAL` can raise the floor (never below 1.0s). Each server runs in its own process, so the floors are per-process — don't run several PoE MCP servers against one account in parallel expecting a shared budget.
 - Non-affiliation notice: in all four READMEs and in trade tool outputs.
+- **Legacy endpoints.** `poe_lib.py` reaches `www.pathofexile.com/character-window/*` (`get-items`, `get-passive-skills`, `get-stash-items`). These are the website's own internal endpoints, not the published Developer API, and they are the same family GGG already closed for stash bulk access (see `ISSUES.md`). They carry more risk than the documented `api.pathofexile.com` endpoints. `poe_lib._get()` also sends `Referer`/`Origin` headers matching the site because those endpoints are the ones the site itself calls — a deliberate deviation from "pure API client", kept only where the documented API has no equivalent yet. The documented alternative is OAuth + `api.pathofexile.com` — already wired up via the `poe_auth` tool, which the stash path prefers automatically when tokens exist. Migrating `get-items` / `get-passive-skills` to the official character endpoint would remove this deviation entirely.
 - If GGG ever objects, we stop immediately. Contact: **zerosquaredio@gmail.com**.
 
 ---
