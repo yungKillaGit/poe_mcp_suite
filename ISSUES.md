@@ -91,6 +91,24 @@ The previous state (2026-06-04) was `HTTP 403: {"error":{"code":6,"message":"For
 
 **Repro (2026-06-04):** `list_tabs` → `HTTP 403: {"error":{"code":6,"message":"Forbidden"}}` despite valid POESESSID in env. Character endpoints (`get-items`) work fine with the same POESESSID.
 
+### `403 Forbidden` = dead POESESSID, not a code bug (2026-11-18)
+
+`HTTP 403: {"error":{"code":6,"message":"Forbidden"}}` on `character-window/*` almost always means the session cookie is no longer valid. Diagnose it in one non-API request instead of guessing:
+
+```bash
+curl -s -o /dev/null -w "%{http_code}" https://www.pathofexile.com/my-account \
+  -H "Cookie: POESESSID=<id>"
+# 200 = cookie alive → 403 is something else (account name, rate limit)
+# 401 = cookie dead     → every character-window call returns 403 until replaced
+```
+
+Verified live: same cookie gave `200/loggedIn` at 20:05 and `401` at 20:19 — all API calls `403` in between, with correct account name and User-Agent (pricing via poe.ninja kept working the whole time, which is the tell that it's auth, not code).
+
+Two traps seen on the same day, both of which look identical from the tool output:
+
+- **Mojibake account name.** `POE_ACCOUNT_NAME` saved as double-encoded bytes (`\xd0\xa0\xe2\x80\x99…` instead of `Вкусно_покушол#6141`) makes every stash call `403` even with a valid cookie. Any non-ASCII name must be written as proper UTF-8; `_header_safe()` percent-encodes it for the User-Agent.
+- **Editing the wrong config.** OpenCode spawns these servers from `~/.config/opencode/opencode.json`; the repo's `.mcp.json` is ignored by it (kept for other agents / docs, and gitignored). Fixing `POE_SESSION_ID` only in `.mcp.json` changes nothing — the running server keeps the stale value from `opencode.json`.
+
 ---
 
 ## Open — data persistence

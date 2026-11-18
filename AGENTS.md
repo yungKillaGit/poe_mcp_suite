@@ -55,6 +55,17 @@ even without skill/rule auto-loading. Key ideas:
   `legal_considerations.md` → "GGG Terms of Service").
 - **Secrets** — `.mcp.json` and `POE_SESSION_ID` are sensitive (session cookie /
   account access). Never log or commit them.
+- **`403 Forbidden` on stash/character tools means a dead `POESESSID`, not a code
+  bug.** Confirm with one non-API request before touching any code:
+  `curl -s -o /dev/null -w "%{http_code}" https://www.pathofexile.com/my-account -H "Cookie: POESESSID=<id>"`
+  → `401` = cookie dead (replace it), `200` = look elsewhere (account name,
+  rate limit). The tell: poe.ninja pricing keeps working while GGG calls fail.
+  See [`ISSUES.md`](ISSUES.md) → "Resolved — stash API access".
+- **The live config is `~/.config/opencode/opencode.json`.** OpenCode spawns
+  these MCP servers only from there; the repo's `.mcp.json` is for other agents
+  and docs, and OpenCode ignores it. Editing only `.mcp.json` changes nothing
+  for a running OpenCode session. Env changes (league, session id, account name)
+  take effect only after the server process restarts.
 
 ## Contributing back
 
