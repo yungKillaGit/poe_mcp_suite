@@ -1,0 +1,10 @@
+# Trade links (Covens)
+
+Generated 2026-11-19T07:52:08.326Z — every link verified by decoding it back.
+Mode: local payloads (no API requests).
+
+## Boots
+https://www.pathofexile.com/trade/search/Covens/H4sIAAAAAAACCp2QwWrEMAxE_2XOJmSTeLfxr5QleGOlGLx2asulS_C_Fzc9ZC-lVBdJSDMDb0NizTlBbQgr2-ChkGjOUd8coYjve4J63cCPlaCgvYHAYh1T3A_WQGFNlE1o9jZxYO0mZxeCwId2mWrC3Xqo81gEjE01wEAt2iUq4seFPldnZ8tNjZ26seuHl3Mnx4PLn9WnVranVg798B9118lW9v1FXn5XX8v1QGOnNB32wzhrprcQH0-wdbyHHJtbCJwq76ij5ecXH3z29j0TSq0vRDYscbQBAAA
+
+## Ring
+https://www.pathofexile.com/trade/search/Covens/H4sIAAAAAAACCo1RwWqEQAz9lZLzILpVcOfWX-i1LDI7xm1gnLGTTFmR-fdipaAXaS5JSN5L8rIAi5HEoBcIk1DwoIHRpmjuDiGr3zqD_lhA5glBg_E9KBjICcatQD1omBhTH4rNdRLEuA4djujXKCITi_EWQcG3cQlBL1lBT7wO6kEPxjFmdcLmaNijYSQPumlOWPA5ObIkxXpEV5VNWZVN_Vr_b4cj-tJeq6qtL9f2HH3LN_Un1duI8jmzvLyTf-xF28TsdvkutEbwEeJ8-ImxFplDnIu4cmUF0USSY5MPPnn6Sgh5tR-cgEFl3QEAAA

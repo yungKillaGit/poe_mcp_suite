@@ -1,0 +1,10 @@
+# Trade links (Covens)
+
+Generated 2026-11-19T07:00:29.571Z — every link verified by decoding it back.
+Mode: local payloads (no API requests).
+
+## R1
+https://www.pathofexile.com/trade/search/Covens/H4sIAAAAAAACCo1RwWqEQAz9lZLzIK6rpc6tv7DXssh0jNvAOGMnmVKR-fdipaAXaS5JSN5L8rIAi5HEoBcIk1DwoIHRpmjeHUJWv3UG_baAzBOCBuN7UDCQE4xbgXrQMDGmPhSb6ySIcR06HNGvUUQmFuMtgoIv4xKCXrKCnngd1IMejGPM6oTN0bBHw0gedN2esOD35MiSFOsRXdVW1_rluWra_-1wRF_KpryUTX2tz9H3fFd_Ur2OKB8zy9ON_GMv2iZmt8t3oTWCjxDnw0-Mtcgc4lzElSsriCaSHJt88MnTZ0LIq_0A1-9Zsd0BAAA
+
+## R2
+https://www.pathofexile.com/trade/search/Covens/H4sIAAAAAAACCo1RwWqEQAz9lZLzIK6rpc6tv7DXssh0jNvAOGMnmVKR-fdipaAXaS5JSN5L8rIAi5HEoBcIk1DwoIHRpmjeHUJWv3UG_baAzBOCBuN7UDCQE4xbgXrQMDGmPhSb6ySIcR06HNGvUUQmFuMtgoIv4xKCXrKCnngd1IMejGPM6oTN0bBHw0gedN2esOD35MiSFOsRXdVW1_rluWra_-1wRF_KpryUTX2tz9H3fFd_Ur2OKB8zy9ON_GMv2iZmt8t3oTWCjxDnw0-Mtcgc4lzElSsriCaSHJt88MnTZ0LIq_0A1-9Zsd0BAAA

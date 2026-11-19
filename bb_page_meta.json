@@ -1,0 +1,218 @@
+{
+  "title": "Storm Burst of Repulsion — сборка на 28 div",
+  "subtitle": "Hierophant 96 · лоадаут BUDGET в PoB · Mageblood и фласки — свои",
+  "rate": 225,
+  "stats": [
+    {
+      "label": "FullDPS",
+      "value": "31.7M"
+    },
+    {
+      "label": "EHP",
+      "value": "86 861"
+    },
+    {
+      "label": "Life / ES / Mana",
+      "value": "3635 / 1109 / 2661"
+    },
+    {
+      "label": "Block / Spell block",
+      "value": "50 / 73"
+    },
+    {
+      "label": "Резы",
+      "value": "75/75/75/75"
+    }
+  ],
+  "prices": {
+    "Body": {
+      "slot": "Тело",
+      "note": "имплисит +2 to Level of Socketed AoE Gems — это corruption-имплисит, поэтому лот только коррапченный; без него −25% DPS",
+      "chaos": 2363,
+      "pos": 10
+    },
+    "Weapon 1": {
+      "slot": "Оружие",
+      "note": "считай 0,39×lightning + 0,28×(fire+cold): в билде 42,5 ≈ 100%. Нужен lightning 45+ и fire+cold в сумме 75+; % phys спеллу не даёт ничего",
+      "chaos": 100,
+      "pos": 11
+    },
+    "Weapon 2": {
+      "slot": "Щит",
+      "note": "block 70 / spell dmg 60 / life 100 / 2 реза",
+      "chaos": 0,
+      "pos": 30
+    },
+    "Helmet": {
+      "slot": "Шлем",
+      "note": "берут за шрайны: % increased Effect of Shrine Buffs 25-50 и Duration 25-50 — цель 45+/40+; EV/ES и life только бонусом",
+      "chaos": 79,
+      "pos": 12
+    },
+    "Amulet": {
+      "slot": "Амулет",
+      "note": "+1 к уровню камней и +30% quality",
+      "chaos": 89,
+      "pos": 13
+    },
+    "Ring 1": {
+      "slot": "Кольцо 1",
+      "note": "chaos res 30 / cast speed 15 / life 79 / fire 38",
+      "chaos": 0,
+      "pos": 33
+    },
+    "Ring 2": {
+      "slot": "Кольцо 2",
+      "note": "10% cast speed implicit + 15% суффиксом, adds lightning to spells, life/mana/chaos res",
+      "chaos": 0,
+      "pos": 34
+    },
+    "Gloves": {
+      "slot": "Перчатки",
+      "note": "35% fractured + 15% implicit конверсии, dex 40",
+      "chaos": 0,
+      "pos": 31
+    },
+    "Boots": {
+      "slot": "Ботинки",
+      "note": "life 123 / ms 25 / light 34 / fire 28 / int 31 — база как в таргете",
+      "chaos": 0,
+      "pos": 32
+    },
+    "Jewel 6230": {
+      "slot": "Джул",
+      "note": "life 18 / chaos res 10 / lightning dmg 12",
+      "chaos": 0,
+      "pos": 35
+    },
+    "Jewel 36634": {
+      "slot": "Джул",
+      "note": "life 18 / chaos res 10 / lightning dmg 12",
+      "chaos": 0,
+      "pos": 36
+    },
+    "Jewel 61419": {
+      "slot": "Джул",
+      "note": "life 18 / chaos res 10 / crit multi 12",
+      "chaos": 0,
+      "pos": 37
+    },
+    "Jewel 31683": {
+      "slot": "Джул",
+      "note": "+4% chaos res за пассив в радиусе — нужен именно chaos-вариант, дешёвые лоты с life/mana",
+      "chaos": 900,
+      "pos": 14
+    },
+    "Jewel 7960": {
+      "slot": "Джул",
+      "note": "+20% урона за каждое проклятие на тебе",
+      "chaos": 2,
+      "pos": 15
+    }
+  },
+  "extra_chaos": 1708,
+  "extras": [
+    {
+      "slot": "Камни",
+      "item": "Invert the Rules 3/20",
+      "what": "+64% DPS до Ashes; quality 20 сверху даёт 1,3%",
+      "price": "6.0 div",
+      "link": "https://www.pathofexile.com/trade/search/Covens/H4sIAAAAAAACCk2MzQrCMBCEXyXMOQfRW97Aqx6llFhXDaRJzG4KJeTdpYqSOc3Px1SwWCkMUxGTuBhgwDSVbK-e0DRkTQSDY1goi5InqVPxxOpcUopZoD8PDHOpP9aGGzTuzgvlbRja0MWK2fE0drmzD5pHTwv5LxdgDk3jVax3sv67_a5tegPOvc0IvQAAAA",
+      "pos": 20
+    },
+    {
+      "slot": "Камни",
+      "item": "Storm Burst of Repulsion 20/20",
+      "what": "основа линка; quality 20 = +18,2% DPS — главный камень по качеству",
+      "price": "180c",
+      "link": "https://www.pathofexile.com/trade/search/Covens/H4sIAAAAAAACClWMvQoCMRCEX0WmTiGWKX0FSzmOeLfKQn7O7EY8Qt5dghZxqhm-makQdVoEtiJtyinCQmgp2d08oRnovtEfvWjK4XAuWRQGK8uSOXB0mjIsnNf53Xf9V2Cv9fcAF1cY3Nkr5Q6mNg2xIrAs85AH-6Awe3qR__Yi7OloENy7m2bwLM6z7gNtXR-NbEo33QAAAA",
+      "pos": 40
+    },
+    {
+      "slot": "Камни",
+      "item": "More Duration 20/20",
+      "what": "quality 20 = +8,4% DPS (дольше держится шторм)",
+      "price": "75c",
+      "link": "https://www.pathofexile.com/trade/search/Covens/H4sIAAAAAAACCk2LuwoCMRREf2WZOoVYpra1spRlua5XCeRlciO7hPy7RBEy1QznTEUWkpKhK0IUEzw0Mq8l0c0ymoLskaFxDomnU0nUnelSYgxJoL73DH2tf5H8HQoPY4VTB3Obh1nhTF6XYQ_1yW6x_Gb78zz08aDgaOulKbwKWSP7QFvPB9kQiHjEAAAA",
+      "pos": 41
+    },
+    {
+      "slot": "Камни",
+      "item": "Multiple Totems 20/0",
+      "what": "quality не даёт DPS (0,0%) — 20/0 достаточно",
+      "price": "20c",
+      "link": "https://www.pathofexile.com/trade/search/Covens/H4sIAAAAAAACCk2MSwoCMRBErzLUOgtxmTu40p0MQxxbCXQ-THfEIeTuEkVIrV5Rj6oQdVoEtiJl9SnCQmgtm7sxoRnongkWp8LqM9N0SUpBpnPJOW0K8z0Q2Gv9qy7eYfDwrLT1YW7zUCuCl3UZ-oBPCgvTi_jnRdjjwSC4d4fW8wGqsB-psQAAAA",
+      "pos": 44
+    },
+    {
+      "slot": "Камни",
+      "item": "Increased Critical Strikes 20/20",
+      "what": "quality 20 = +1,7% DPS",
+      "price": "33c",
+      "link": "https://www.pathofexile.com/trade/search/Covens/H4sIAAAAAAACCk2MMQvCMBSE_0q5OYM4ZnVy7iilPNOnBNM0Ji9iCfnvEkXITXd8d1eQhCQn6IItiN08NBKbHOnqGFVB9sDQOHsTmRIvwylasYbcMEq0D07DmEPYokB9vxL0pfxX5Bco3KwTjg1MdepiwWqTmbvc2Tuvs-MXu1_PQx8PCiu9m6kKz0zOyt7R2vQBnFt94NEAAAA",
+      "pos": 42
+    },
+    {
+      "slot": "Камни",
+      "item": "Increased Critical Damage 20/20",
+      "what": "quality 20 = +2,2% DPS",
+      "price": "52c",
+      "link": "https://www.pathofexile.com/trade/search/Covens/H4sIAAAAAAACCk2MMQvCMBSE_0q5OYM4ZtXF2VFKeabPEkjSmLyIJeS_SxUhN93x3V1FFpKSoSvWKHYN0MhsSqK7YzQF2SJD4xJMYso8D6dkxRpyw5k8LTxcS4xrEqjvVYa-1f-IwgyFh3XCaQdjG7tY4W02U5c7u7CfHL_Y_XoB-nhQ8PTeTVN4FnJWto62XR8YidKg0AAAAA",
+      "pos": 43
+    },
+    {
+      "slot": "Пояс",
+      "item": "Mageblood + 5 фласок",
+      "what": "твои",
+      "price": "—",
+      "link": "—",
+      "pos": 50
+    }
+  ],
+  "steps": [
+    "Купить <b>тело</b>: 6L со <code>+2 to Level of Socketed AoE Gems</code> — без него −25% DPS. Самый дорогой уник, поэтому цену проверяешь первой.",
+    "Купить <b>Light of Meaning</b> — строго chaos-вариант (<code>+4% to Chaos Resistance</code>), дешёвые лоты с другими роллами не подойдут.",
+    "Купить остальные уники одним заходом: The Gull (effect шрайнов 45+), Ashes of the Stars (quality 24+), оружие, Self-Flagellation.",
+    "Купить <b>Invert the Rules 3/20</b> — единственный дорогой камень, +64% DPS.",
+    "Рары в порядке <b>щит → перчатки → ботинки → кольца → джулы</b>: сначала те, где мод нельзя накрафтить (block, фрактурная конверсия), джулы — последними, они закрывают остаток.",
+    "Камни по мелочи в конце: Storm Burst of Repulsion 20/20 (quality +18,2%), More Duration 20/20 (+8,4%), Crit Strikes и Crit Damage 20/20 (+1,7 / +2,2%), Multiple Totems <b>20/0</b> (quality не даёт DPS).",
+    "Собрать 6-линк в тело: Storm Burst + More Duration + Multiple Totems + Invert the Rules + Inc Crit Strikes + Inc Crit Damage.",
+    "Переключить лоадаут на <b>BUDGET</b>, сверить резы и dex ≥ 111.",
+    "Проверить <code>get_pob_warnings</code> — должно быть пусто."
+  ],
+  "never": [
+    "Не менять Soul Mantle 6L на 5-линк или без +2 AoE.",
+    "Не трогать Mageblood и фласки — сетап фиксированный, он же снимает эффект проклятий.",
+    "Не снимать +40 Dexterity с перчаток.",
+    "Кольца — оба rare: Kikazaru не нужен, проклятия гасятся фласками."
+  ],
+  "upgrades": [
+    {
+      "what": "Storm Burst of Repulsion 21/20",
+      "price": "6.8 div",
+      "gain": "+8% DPS"
+    },
+    {
+      "what": "Unnatural Instinct",
+      "price": "13.5 div",
+      "gain": "~+16% DPS"
+    },
+    {
+      "what": "+1 to maximum Summoned Totems на щите",
+      "price": "—",
+      "gain": "+3% DPS"
+    },
+    {
+      "what": "Invert the Rules 4/20",
+      "price": "15 div",
+      "gain": "~+5% DPS"
+    }
+  ],
+  "checks": [
+    "Дерево требует 97 уровень, у тебя 96 — не хватает одного очка (одна нода или один уровень).",
+    "Бюджет: 26 div + 520c ≈ 28,3 div (курс 225). Итог с рарами ≈ 25,2 div → остаток ≈ 3 div, лестницу апгрейдов не покрывает.",
+    "Все ссылки с Instant Buyout; рары ограничены базой, обычная броня — только пулом защиты.",
+    "Фильтры по модам стоят «на наличие» — роллы выставляешь сам; если пусто, выключи пару фильтров."
+  ],
+  "total_note": "рары не входят в итог: 5 предметов + 3 джула по ~50c ≈ 400c"
+}
