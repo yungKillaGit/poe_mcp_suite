@@ -164,6 +164,7 @@ Comprehensive coverage of how socketed jewels affect the tree. All new this iter
 | `analyze_item_mods` | pob ⭐ new |
 | `search_master_crafts` | pob ⭐ new |
 | `get_essence_detail` | pob ⭐ new |
+| `search_eldritch_implicits` | pob |
 | `calculate_mod_odds` | pob ⭐ new |
 | `search_item` / `get_item_detail` | poe-data-mcp |
 | `search_mods` | poe-data-mcp |
